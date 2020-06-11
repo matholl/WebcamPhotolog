@@ -11,7 +11,7 @@ try:
             currenttime = str(datetime.now())
             currenttimeshort = currenttime[0:19]
             currenttimeshort = currenttimeshort.replace(" ", "_")
-            os.system('fswebcam -r 1280x720 --no-banner ./images/image_' + currenttimeshort + '.jpg')
+            os.system('fswebcam -D 2 -S 20 --set brightness=30% -r 1280x720 --no-banner ./images/image_' + currenttimeshort + '.jpg')
             time.sleep(minBetweenImages*60)
 except KeyboardInterrupt:
     pass
