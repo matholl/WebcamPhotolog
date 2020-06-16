@@ -30,8 +30,9 @@ try:
                 time.sleep(minBetweenImagesDay*60)
             else:
                 os.system('fswebcam -D 2 -S 20 --set brightness=30% -r 1280x720 --no-banner ./images/image_' + currenttimeshort + '.jpg')
-                if ((start_daytime - current_time) < minBetweenImagesNight*60):
-                    time.sleep((start_daytime - current_time)*60)
+                if current_time < start_daytime:
+                    if ((start_daytime - current_time) < minBetweenImagesNight*60):
+                        time.sleep((start_daytime - current_time)*60)
                 else:
                     time.sleep(minBetweenImagesNight*60)
             
