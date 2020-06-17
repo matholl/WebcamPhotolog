@@ -33,6 +33,8 @@ try:
                 if current_time < start_daytime:
                     if ((start_daytime - current_time) < minBetweenImagesNight*60):
                         time.sleep((start_daytime - current_time)*60)
+                    else:
+                        time.sleep(minBetweenImagesNight*60)
                 else:
                     time.sleep(minBetweenImagesNight*60)
             
